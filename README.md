@@ -16,7 +16,10 @@ git clone https://github.com/BlackWolf94/RealTimeChat.git
 * Do install all dependencies using  
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`  
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install -g nodemon`  
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm start`  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd web`  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install`  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`bower install`  
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`cd .. & npm start`  
 Your server will be setup and ready for use.
 
 ### UI
@@ -24,12 +27,3 @@ Your server will be setup and ready for use.
 * Register user by giving basic details.
 * Login from the same screen.  
 `Note: Handle should be unique for every user.`
-
-# Why I started this
-I had seen a lot of times during local camps that people find it difficult to interact with each other may be due to hesitation. Most of the local chats that we find will be again public and the interactions become public. So I was thinking of creating an application where people can talk in public as well as private.
-
-# Upcoming
-I have lot of things to do. 
-* Bug fixes.
-* More feauters to come, like blocking a user from chatting etc.  
-* Option for saving chats in case you need it. For now it doesnot store the messages.
