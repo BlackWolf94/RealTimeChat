@@ -4,7 +4,7 @@
   "description": "Chat application for local usage",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sudheeshshetty/Chat"
+    "url": "https://github.com/BlackWolf94/RealTimeChat.git"
   },
   "main": "server.js",
   "scripts": {
