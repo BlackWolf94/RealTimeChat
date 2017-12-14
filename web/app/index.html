@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="web/bower_components/angular-material/angular-material.css">
+
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="web/app/styles/main.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="chatApp" layout="row" ng-controller="MainCtrl" layout-fill="">
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<md-content flex="" layout="column">
+    <md-toolbar >
+        <div class="md-toolbar-tools" ng-if="is_login">
+            <span flex></span>
+            <span>{{user.name}}</span>
+            <md-button class="md-icon-button">
+                <md-icon><ng-md-icon icon="settings"></ng-md-icon></md-icon>
+            </md-button>
+            <md-button class="md-icon-button"
+                       ng-click="logOut()">
+                <md-icon><ng-md-icon icon="logout"></ng-md-icon></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content ng-view="" id="main-content"></md-content>
+</md-content>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+    !function (A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+            (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+</script>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="web/bower_components/angular/angular.js"></script>
+<script src="web/bower_components/angular-aria/angular-aria.js"></script>
+<script src="web/bower_components/angular-animate/angular-animate.js"></script>
+<script src="web/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="web/bower_components/angular-resource/angular-resource.js"></script>
+<script src="web/bower_components/angular-route/angular-route.js"></script>
+<script src="web/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="web/bower_components/angular-touch/angular-touch.js"></script>
+<script src="web/bower_components/angular-material/angular-material.js"></script>
+<script src="web/bower_components/angular-material-icons/angular-material-icons.js"></script>
+<script src="web/bower_components/crypto-js/crypto-js.js"></script>
+<script src="web/bower_components/socket.io.client/dist/socket.io-1.3.5.js"></script>
+<script src="web/bower_components/angular-socket-io/socket.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="web/app/scripts/app.js"></script>
+<script src="web/app/scripts/controllers/main.js"></script>
+<script src="web/app/scripts/controllers/about.js"></script>
+<script src="web/app/scripts/directives/authorization/authorization.js"></script>
+<script src="web/app/scripts/services/aut.js"></script>
+<script src="web/app/scripts/services/Socket.js"></script>
+<script src="web/app/scripts/directives/mainContainer/main_container.js"></script>
+<script src="web/app/scripts/directives/groupChat/group_chat.js"></script>
+<script src="web/app/scripts/directives/privateChat/private_chat.js"></script>
+<script src="web/app/scripts/directives/userList/user_list.js"></script>
+<!-- endbuild -->
+</body>
+</html>

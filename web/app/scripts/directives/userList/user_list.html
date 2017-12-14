@@ -1,0 +1,22 @@
+<md-card id="user-online" style="height: 100%">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <ng-md-icon icon="people" style="fill: white"></ng-md-icon>
+            <h3>Користувачі</h3>
+        </div>
+    </md-toolbar>
+    <md-card-content class="container" style="padding: 0;">
+        <md-list>
+            <md-list-item ng-repeat="user in users" ng-click="goToPerson(user)">
+                <img ng-if="user.avatar" alt="{{ user.name }}" ng-src="{{ user.avatar }}" class="md-avatar">
+                <ng-md-icon ng-if="!user.avatar" icon="person"></ng-md-icon>
+                <p>{{ user.name }}</p>
+                <!--<span>{{user.countMsg}}</span>-->
+                <!--<md-button class="md-secondary md-icon-button">-->
+                    <!--<ng-md-icon icon="message"></ng-md-icon>-->
+                <!--</md-button>-->
+                <!--<md-divider></md-divider>-->
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>

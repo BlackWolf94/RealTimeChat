@@ -1,0 +1,47 @@
+<md-card style="height: 94%" >
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <ng-md-icon icon="chat" style="fill: white"></ng-md-icon>
+            <h3>{{receiver.name}}</h3>
+        </div>
+    </md-toolbar>
+    <md-card-content class="container">
+        <md-list>
+            <md-list-item class="md-2-line"
+                          ng-repeat="message in private_mssages[receiver._id]">
+                <ng-md-icon class="md-avatar" ng-if="message.sender_id !== user._id" icon="person" size="36"></ng-md-icon>
+                <div  class="md-list-item-text"
+                      layout="column"
+                      ng-if="message.sender_id !== user._id">
+                    <h3>{{ users[message.sender_id].name }} <span class="md-caption">{{message.date | date:'HH:mm:ss' }}</span></h3>
+                    <p>{{message.message}}</p>
+                </div>
+                <div class="md-list-item-text"
+                     layout="column"
+                     layout-align="center end"
+                     ng-if="message.sender_id === user._id">
+                    <h3><span class="md-caption">{{message.date | date:'HH:mm:ss' }}</span></h3>
+                    <p>{{message.message}}</p>
+                </div>
+                <ng-md-icon class="md-avatar" ng-if="message.sender_id === user._id" icon="person" size="36"></ng-md-icon>
+            </md-list-item>
+        </md-list>
+
+    </md-card-content>
+    <md-card-actions>
+        <md-divider></md-divider>
+        <form layout="row"
+              layout-align="space-between center"
+              ng-submit="sendPrivateMsg()">
+            <md-input-container class="md-block"
+                                style="margin-bottom: 0"
+                                md-no-float flex="">
+                <label>Повідомлення</label>
+                <input ng-model="receiver_msg">
+            </md-input-container>
+            <md-button class="md-icon-button" type="submit">
+                <ng-md-icon icon="send" size="24" style="fill: green"></ng-md-icon>
+            </md-button>
+        </form>
+    </md-card-actions>
+</md-card>
